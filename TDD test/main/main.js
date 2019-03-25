@@ -10,9 +10,9 @@ module.exports = function main(km, minute) {
     }
 
     if(km > 2 && km < 8) {
-        let result = km * freightPerKilometre + minute * parkPerMinute;
+        let result = startPrice + (km - 2) * freightPerKilometre + minute * parkPerMinute;
         return Math.round(result);
     }
 
-    return Math.round(8 * freightPerKilometre + (km - 8) * freightPerKilometre * (1 + moreThanEight) + minute * parkPerMinute);
+    return Math.round(startPrice + 6 * freightPerKilometre + (km - 8) * freightPerKilometre * (1 + moreThanEight) + minute * parkPerMinute);
 };
